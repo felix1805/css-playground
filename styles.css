@@ -159,3 +159,109 @@ align-items: stretch;
     transform: translateX(-15px) rotate(135deg);
   }
 }
+.right-expand-arrow {
+  /* margin-right: 60px; */
+  animation: bounceRight 3s infinite;
+}
+@keyframes bounceRight {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateX(0) rotate(315deg);
+  }
+  40% {
+    transform: translateX(30px) rotate(315deg);
+  }
+  60% {
+    transform: translateX(15px) rotate(315deg);
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+}
+
+.logo-container img {
+  width: 100%;
+
+}
+
+.hidden-pill {
+  height: 100%;
+  width: 100%;
+  border: solid 12px rgb(38, 38, 38);
+  box-sizing: border-box;
+  border-radius: 100px;
+  text-align: center;
+}
+
+.social-fan {
+  position: relative;
+}
+
+.social-fan .social {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform-origin: top right;
+  z-index: 10;
+}
+
+.social-fan:hover .portfolio {
+  display: block;
+  animation: fanPortfolio 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fanPortfolio {
+  0% {
+    transform: rotate(0deg)
+    right 0;
+    top: 0;
+  }
+  100% {
+    transform: rotate(-20deg);
+    right: 40px;
+    top: -12px;
+  }
+}
+.social-fan:hover .email {
+  display: block;
+  animation: fanEmail 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fanEmail {
+  0% {
+    transform: rotate(0deg)
+    right 0;
+    top: 0;
+  }
+  100% {
+    transform: rotate(-40deg);
+    right: 100px;
+    top: -16px;
+  }
+}
+.social-fan:hover .GitHub {
+  display: block;
+  animation: fanGitHub 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fanGitHub {
+  0% {
+    transform: rotate(0deg)
+    right 0;
+    top: 0;
+  }
+  100% {
+    transform: rotate(-60deg);
+    right: 110px;
+    top: -30px;
+  }
+}
