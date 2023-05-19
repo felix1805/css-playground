@@ -10,6 +10,7 @@
 body {
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 a {
@@ -264,4 +265,38 @@ align-items: stretch;
     right: 110px;
     top: -30px;
   }
+}
+
+.stretchable:hover {
+flex-grow: 10 !important;
+}
+
+#takeover:hover ~ #sqish {
+  min-width: 0;
+}
+
+.large-box:hover {
+  flex-grow: 10 !important;
+}
+
+.large-box:hover .text-box {
+display: block;
+}
+
+.large-box .text-box {
+  max-width: 300px;
+}
+
+.large-box .text-box p {
+  font-size: 18px;
+}
+.large-box .text-box a {
+  font-size: 18px;
+  color:rgba(196, 104, 0)
+}
+
+.hidden-box {
+  height:auto;
+  width: 0;
+  background-color: rgb(222,222,222);
 }
