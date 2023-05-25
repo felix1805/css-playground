@@ -15,6 +15,21 @@ const iconPath = document.querySelector('#icon');
 const hiddenBox = document.querySelector('.hidden-box');
 const textBox = document.querySelector('.hidden-box .text-box');
 
+let paletteIndex = 0;
+const xLetterIndex = 11;
+const rotateIconIndex = 3;
+const socialFanIndex = 1;
+
+// start state
+xLetterSVG.style.fill = colorPalettes[paletteIndex][xLetterIndex].fill;
+
+allPills.forEach((pill, i) =>
+  pill.style.backgroundColor = colorPalettes[paletteIndex][i].fill);
+  
+allHiddenPills.forEach(hiddenPill =>
+  hiddenPill.style.backgroundColor = colorPalettes[paletteIndex][socialFanIndex].fill)
+
+
 const expand = () => {
   if (hiddenBox.clientWidth !== 0) {
     textBox.classList.add('hidden')
@@ -25,4 +40,16 @@ const expand = () => {
   }
 };
 
+
+const reverse = () => {
+  if (boxContainer.style.flexWrap === 'wrap') {
+    boxContainer.style.flexWrap = 'wrap-reverse'
+  } else {
+    boxContainer.style.flexWrap = 'wrap'
+  }
+};
+
+
+
 expandPill.addEventListener('click', expand);
+reversePill.addEventListener('click', reverse);

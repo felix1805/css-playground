@@ -29,7 +29,6 @@ align-items: stretch;
   min-height: 150px;
   min-width: 250px;
   flex-grow: 1;
-  background-color: red;
 }
 
 .box {
@@ -40,13 +39,11 @@ align-items: stretch;
   min-height: 150px;
   min-width: 500px;
   flex-grow: 4;
-  background-color: blue;
 }
 .large-box {
   min-height: 500px;
   min-width: 410px;
   flex-grow: 2;
-  background-color: green;
 }
 
 .pill {
