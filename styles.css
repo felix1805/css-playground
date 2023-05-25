@@ -295,8 +295,19 @@ display: block;
   color:rgba(196, 104, 0)
 }
 
+.small-box.stretchable:hover .hidden {
+  display: block;
+}
+
 .hidden-box {
   height:auto;
   width: 0;
   background-color: rgb(222,222,222);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden-box .text-box {
+  margin: 30px;
 }
