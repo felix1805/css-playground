@@ -5,6 +5,7 @@
   font-family: "Poppins", sans-serif;
   color: rgb(38, 38, 38);
   font-weight: 200;
+  font-size: 25px;
 }
 
 body {
@@ -18,10 +19,10 @@ a {
 }
 
 .box-container {
-display: flex;
-flex-wrap: wrap;
-height: 100vh;
-align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  align-items: stretch;
 
 }
 
@@ -40,10 +41,15 @@ align-items: stretch;
   min-width: 500px;
   flex-grow: 4;
 }
+
 .large-box {
   min-height: 500px;
   min-width: 410px;
   flex-grow: 2;
+}
+
+.large-box #squish {
+  min-width: 150px !important;
 }
 
 .pill {
@@ -66,11 +72,12 @@ align-items: stretch;
 .input-container {
   position: absolute;
   bottom: 50px;
-  left: 102px;
+  left: 105px;
   transform: rotate(-90deg);
   transform-origin: bottom left;
   z-index: 2;
 }
+
 .slider-container input[type="range"] {
   -webkit-appearance: none;
   width: 420px;
@@ -104,19 +111,20 @@ align-items: stretch;
   position: relative;
   cursor: pointer;
 }
+
 .x-box svg {
   transform: scale(0.95);
 }
 
 .x-box p {
   position: absolute;
-  top:40%;
+  top: 45%;
   z-index: 10;
   display: none;
 }
 
 .x-box:hover p {
-  display:block
+  display: block
 }
 
 .rotating-icon {
@@ -127,6 +135,7 @@ align-items: stretch;
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -142,7 +151,9 @@ align-items: stretch;
   margin-right: 60px;
   animation: bounceLeft 3s infinite;
 }
+
 @keyframes bounceLeft {
+
   0%,
   20%,
   50%,
@@ -150,18 +161,23 @@ align-items: stretch;
   100% {
     transform: translateX(0) rotate(135deg);
   }
+
   40% {
     transform: translateX(-30px) rotate(135deg);
   }
+
   60% {
     transform: translateX(-15px) rotate(135deg);
   }
 }
+
 .right-expand-arrow {
   /* margin-right: 60px; */
   animation: bounceRight 3s infinite;
 }
+
 @keyframes bounceRight {
+
   0%,
   20%,
   50%,
@@ -169,9 +185,11 @@ align-items: stretch;
   100% {
     transform: translateX(0) rotate(315deg);
   }
+
   40% {
     transform: translateX(30px) rotate(315deg);
   }
+
   60% {
     transform: translateX(15px) rotate(315deg);
   }
@@ -180,7 +198,8 @@ align-items: stretch;
 .logo-container {
   display: flex;
   align-items: center;
-  max-width: 250px;
+  max-width: 150px;
+  margin-right: 200px;
 }
 
 .logo-container img {
@@ -196,6 +215,7 @@ align-items: stretch;
   border-radius: 100px;
   text-align: center;
 }
+
 
 .social-fan {
   position: relative;
@@ -217,16 +237,17 @@ align-items: stretch;
 
 @keyframes fanPortfolio {
   0% {
-    transform: rotate(0deg)
-    right 0;
+    transform: rotate(0deg) right 0;
     top: 0;
   }
+
   100% {
     transform: rotate(-20deg);
     right: 40px;
     top: -12px;
   }
 }
+
 .social-fan:hover .email {
   display: block;
   animation: fanEmail 1s ease-in-out;
@@ -235,16 +256,17 @@ align-items: stretch;
 
 @keyframes fanEmail {
   0% {
-    transform: rotate(0deg)
-    right 0;
+    transform: rotate(0deg) right 0;
     top: 0;
   }
+
   100% {
     transform: rotate(-40deg);
     right: 100px;
     top: -16px;
   }
 }
+
 .social-fan:hover .GitHub {
   display: block;
   animation: fanGitHub 1s ease-in-out;
@@ -253,10 +275,10 @@ align-items: stretch;
 
 @keyframes fanGitHub {
   0% {
-    transform: rotate(0deg)
-    right 0;
+    transform: rotate(0deg) right 0;
     top: 0;
   }
+
   100% {
     transform: rotate(-60deg);
     right: 110px;
@@ -265,10 +287,10 @@ align-items: stretch;
 }
 
 .stretchable:hover {
-flex-grow: 10 !important;
+  flex-grow: 10 !important;
 }
 
-#takeover:hover ~ #sqish {
+#takeover:hover~#sqish {
   min-width: 0;
 }
 
@@ -277,7 +299,7 @@ flex-grow: 10 !important;
 }
 
 .large-box:hover .text-box {
-display: block;
+  display: block;
 }
 
 .large-box .text-box {
@@ -287,9 +309,10 @@ display: block;
 .large-box .text-box p {
   font-size: 18px;
 }
+
 .large-box .text-box a {
   font-size: 18px;
-  color:rgba(196, 104, 0)
+  color: rgba(196, 104, 0)
 }
 
 .small-box.stretchable:hover .hidden {
@@ -297,9 +320,9 @@ display: block;
 }
 
 .hidden-box {
-  height:auto;
+  height: auto;
   width: 0;
-  background-color: rgb(222,222,222);
+  background-color: rgb(222, 222, 222);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -308,3 +331,42 @@ display: block;
 .hidden-box .text-box {
   margin: 30px;
 }
+
+.hidden-box ~ .box-container {
+  overflow: hidden;
+}
+
+.pulse {
+  transform-origin: center;
+  animation: pulse 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hidden-box a,
+.hidden-box p {
+  font-size: 18px;
+}
+
+.hidden-box a {
+  color: rgb(206, 53, 53);
+}
+
+iframe {
+  width: 100%;
+  min-height: 300px;
+}
+
